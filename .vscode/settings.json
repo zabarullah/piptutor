@@ -1,0 +1,9 @@
+{
+    "eslint.codeActionsOnSave.rules": null,
+    "tailwindCSS.emmetCompletions": true,
+    "eslint.codeActionsOnSave.mode": "all",
+    "editor.formatOnSave": true,
+    "notebook.formatOnSave.enabled": true
+}
+
+  

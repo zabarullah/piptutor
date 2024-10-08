@@ -1,0 +1,31 @@
+# Root-level build and distribution directories
+/build
+/dist
+
+# Production build output
+client/build
+
+# Node modules
+node_modules/
+client/node_modules/
+
+# Environment variables
+.env
+client/.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+client/npm-debug.log*
+
+
+# Lint and prettier cache files
+.eslintcache
+.prettiercache
+client/.eslintcache
+client/.prettiercache
+
+# Testing coverage directories
+client/coverage
+

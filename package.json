@@ -1,0 +1,50 @@
+{
+  "name": "mern-stack-typescript-project-template",
+  "version": "1.0.0",
+  "description": "Boiler Plate Template for a MERN Typescript stack project",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon --watch src --exec \"node --loader ts-node/esm src/index.ts\"",
+    "build": "tsc",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server:watch\" \"npm run client:watch\"",
+    "server:build": "npm run build",
+    "client:build": "npm run build --prefix client",
+    "server:watch": "nodemon --watch src --exec \"node --loader ts-node/esm src/index.ts\"",
+    "client:watch": "npm start --prefix client",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,json,css,md}\""
+  },
+  "keywords": [],
+  "author": "Zabar Ullah",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.8.0",
+    "@types/cors": "^2.8.17",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.21",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^20.14.10",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "concurrently": "^7.6.0",
+    "eslint": "^9.8.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.8.0",
+    "nodemon": "^3.1.4",
+    "prettier": "^3.3.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^7.18.0"
+  }
+}
