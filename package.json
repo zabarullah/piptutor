@@ -1,7 +1,7 @@
 {
-  "name": "mern-stack-typescript-project-template",
+  "name": "piptutor",
   "version": "1.0.0",
-  "description": "Boiler Plate Template for a MERN Typescript stack project",
+  "description": "full-stack Piptutor Project with React, Typescript, UI/Unit testing in Jest, Node/Express.js and MongoDB",
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
@@ -37,7 +37,7 @@
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
     "concurrently": "^7.6.0",
-    "eslint": "^9.8.0",
+    "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "globals": "^15.8.0",
