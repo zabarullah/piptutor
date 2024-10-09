@@ -25,10 +25,10 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-// testing ES Lint and prettier with the lines below
+//testing ES Lint and prettier with the lines below
 // const message = 'Hello, world';
 // const bogusVariable = 42;
 
-// function testFunction(param1: number, param2: number):number {
+// function testFunction(param1: number, param2: number): number {
 //   return param1 + param2;
 // }
