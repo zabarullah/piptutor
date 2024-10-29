@@ -1,0 +1,125 @@
+.footer-container {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+  border-bottom: 1px solid var(--text-grey);
+  border-top: 1px solid var(--text-grey);
+}
+
+.border {
+  margin-top: auto;
+  border-right: 1px solid var(--text-grey);
+}
+
+.footer-section {
+  flex: 1;
+  padding: 1rem;
+}
+
+.footer-section.about h2 {
+  color: var(--primary-blue);
+}
+
+.footer-section h3 {
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+}
+
+.footer-section p {
+  margin: 0.5rem 0;
+  color: var(--text-grey);
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+  color: var(--text-grey);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: var(--hover-blue);
+}
+
+.footer-bottom {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-grey);
+}
+
+i.fa-square-instagram {
+    color: #e4405f; /* Instagram pink */
+    font-size: 36px;
+    margin-left: 5px;
+  }
+
+  i.fa-square-facebook {
+    color: #1877f2; /* Facebook blue */
+    font-size: 36px;
+    margin-left: 5px;
+  }
+  
+  i.fa-square-twitter {
+    color: #1da1f2; /* Twitter blue */
+    font-size: 36px;
+    margin-left: 5px;
+  }
+  
+  i.fa-square-youtube {
+    color: #ff0000; /* YouTube red */
+    font-size: 36px;
+    margin-left: 5px;
+  }
+  
+  i.fa-envelope {
+    color: #1877f2; /* Facebook blue */
+    font-size: 36px;
+    margin-left: 5px;
+  }
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-content.section-lg {
+    background-image: none;
+  }
+
+  .footer-section {
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid var(--text-grey);
+    background-image: url('../../../public/grid-background.svg'); /* Path to your SVG */
+
+  }
+
+  .footer-section:last-child {
+    border-bottom: none;
+  }
+
+  .footer-bottom {
+    font-size: 0.75rem;
+    border-bottom: none;
+  }
+}

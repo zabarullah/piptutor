@@ -2,22 +2,13 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-
-// You might want to mock DummyComponent if it has its own complex logic
-jest.mock('./components/dummy_component/dummy.component', () => {
-  return function DummyComponentMock() {
-    return <div>Dummy Component</div>; // Mock implementation
-  };
-});
-
 describe('App Component', () => {
-  test('renders without crashing', () => {
+  it('should render HomePageRoute component', () => {
+    // Render the App
     render(<App />);
-  });
-
-  test('renders DummyComponent', () => {
-    render(<App />);
-    const dummyComponentElement = screen.getByText(/dummy component/i);
-    expect(dummyComponentElement).toBeInTheDocument(); // Check if DummyComponent is rendered
+    // Assert if specific content from HomePageRoute is loaded
+    // For example, if HomePageRoute renders a heading like <h1>Home</h1>
+    expect(screen.getByText(/home/i)).toBeInTheDocument();
   });
 });
+

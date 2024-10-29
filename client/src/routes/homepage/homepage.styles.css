@@ -1,0 +1,37 @@
+/* Section Large Styles */
+.section-lg {
+  padding: 2rem 1rem;
+  background-image: url('../../../public/grid-background.svg'); /* Path to your SVG */
+  background-color: var(--background-grey); /* Set background color */
+  background-position: center;
+  /* background-repeat: repeat; */
+  /* background-size: cover; */
+  background-blend-mode: multiply; /* Blends the grey color with the SVG */
+  width: 100%;
+  margin: 0 auto; /*to center the section */
+  color: var(--text-dark);
+}
+
+.section-grid {
+  padding: 2rem 6rem;
+  text-align: center;
+}
+
+.diagnol {
+  clip-path: polygon(
+    0 10%,
+    /* Top-left corner: Moves 10% down the y-axis (creates a diagonal slope from top-left) */
+      100% 0%,
+    /* Top-right corner: Stays at 0% on the y-axis (creates a sharp diagonal cut at the top-right) */
+      100% 90%,
+    /* Bottom-right corner: Moves 10% up from the bottom (90% down the y-axis, forming a diagonal at the bottom-right) */
+      0 100%
+      /* Bottom-left corner: Remains at the bottom (100% down the y-axis, keeping it flat on the left side) */
+  );
+}
+
+
+
+.shadow {
+  text-shadow: 0 2px 4px #14142b46;
+}

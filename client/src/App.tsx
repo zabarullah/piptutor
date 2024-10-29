@@ -1,11 +1,13 @@
 import React from 'react';
-import './App.css';
-import DummyComponent from './components/dummy_component/dummy.component';
+import './styles/global.styles.css'
+// import DummyComponent from './components/dummy_component/dummy.component';
+import HomePageRoute from './routes/homepage/homepage.route';
 
 function App() {
   return (
-    <div className="App">
-      <DummyComponent />
+    <div>
+      {/* <DummyComponent /> */}
+      <HomePageRoute />
     </div>
   );
 }

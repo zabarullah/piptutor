@@ -1,0 +1,193 @@
+
+.padding {
+  justify-content: space-around;
+  padding: 0 4rem;
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--background-light);
+
+  z-index: 1000;
+}
+
+.line {
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary-blue);
+  box-shadow: 0 2px 4px #14142b46;
+  margin: 6px auto;
+  transition: all 0.3s ease;
+}
+
+/* transformation of the hamburger lines to an < */
+.line.active:nth-child(1) {
+  transform: translateY(9px) rotate(405deg);
+  transform-origin: center; /* Rotate from the left end */
+
+}
+
+.line.active:nth-child(2) {
+  opacity: 0; /* Hide the middle line */
+}
+
+.line.active:nth-child(3) {
+  transform: translateY(-9px) rotate(-405deg);
+  transform-origin: center; /* Rotate from the left end */
+
+}
+
+/* Main Navigation Styles */
+.nav {
+  padding: 0;
+  margin: 0;
+}
+
+.nav li {
+  display: inline;
+  padding: 1rem;
+  list-style-type: none;
+}
+
+.link {
+  position: relative;
+  padding: 2px;
+}
+
+.link:hover {
+  color: var(--hover-blue);
+}
+
+/* .link:visited {
+  color: var(--primary-blue);
+} */
+
+/* adding smooth line transition under the link */
+.link::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 50%;
+  bottom: 0;
+  background-color: var(--hover-blue);
+  transition:
+    width 0.6s ease-in-out,
+    left 0.6s ease-in-out;
+}
+
+.link:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+/* Hide main nav icon on smaller screens as hamburger is displayed*/
+@media (max-width: 767px) {
+  .nav {
+    display: none; /* Hide on larger screens */
+  }
+}
+
+/* Hamburger Navigation Styles */
+
+/* Hamburger Icon Styles */
+.hamburger {
+  cursor: pointer;
+}
+
+.hamburger-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--background-light);
+  position: absolute;
+  top: 75px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+
+.hamburger-nav ul {
+  display: flex;
+  flex-direction: column; /* Stack the items vertically */
+  justify-content: space-around; /* Evenly distribute space between links */
+  height: 100%; /* Adjust height to control spacing of the links */
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hamburger-nav ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../../public/grid-background.svg'); /* Path to your SVG */
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+
+}
+
+/* Removing the blue line for the links for the hamburger nav */
+.hamburger-nav ul .link::before {
+  content: none; /* Remove the line */
+}
+
+.hamburger-nav ul li:nth-child(odd) {
+  background-color: var(--background-grey); /* The grey background */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply; /* Blends the grey color with the SVG */
+}
+
+.hamburger-nav ul li:hover {
+  background-image: url('../../../public/grid-background.svg'); /* Path to your SVG */
+  background-color: rgba(218, 239, 251, 0.7);
+  background-color: var(--hover-blue);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: screen; /* Blends the  color with the SVG */
+  color: var(--text-light);
+}
+
+.hamburger-nav ul li a {
+  display: flex; /* Make anchor fill parent list item */
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  text-align: center; /* Center the text horizontally */
+  color: var(--primary-blue);
+  /* font-size: 3rem; */
+  text-shadow: 0 2px 4px #14142b46;
+  transition:
+    color 0.3s ease-in-out,
+    font-size 0.3s ease-in-out; /* Unified transition for text color and size */
+}
+
+.hamburger-nav ul li:hover a {
+  color: var(--text-light); /* Keep text white on hover */
+  font-size: 3rem;
+}
+
+/* Hide hamburger icon on larger screens */
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
+  .hamburger-nav {
+    display: none;
+  }
+}

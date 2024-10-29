@@ -1,0 +1,339 @@
+/* Global Variables - Define commonly used colors, fonts, and measurements */
+:root {
+  --primary-blue: #3d7fff; /* Main brand color */
+  --secondary-blue: #4b5dff; /* Secondary brand color darker*/
+  --primary-button-color: linear-gradient(#3d7fff, #4b5dff);
+  --primary-button-color-hover: linear-gradient(#4b5dff, #3d7fff);
+  --hover-blue: #2563eb; /* Button hover color */
+  --light-blue: #60a5fa; /* Light blue variant */
+  --background-light: #fff; /* Light background */
+  /* --background-grey: linear-gradient(to top, #e7ebfc 0%, #fff 25%, #fff 75%,  #e7ebfc 100%); Light background */
+  --background-grey: #e7ebfc88; /* see through grey for backgrounds */
+  --box-shadow: box-shadow: 0 2px 4px #14142b46; /* shadow color */
+  --text-dark: #1f2937; /* Dark text color */
+  --text-light: #ffffff; /* Light text color */
+  --text-grey: #828aa3; /* Light text color */
+  --border-radius: 76px; /* Global border radius for UI elements */
+  --font-body: 'Inter', sans-serif; /* Body font */
+  --font-heading: 'Poppins', sans-serif; /* Heading font */
+  --max-container-width: 1600px; /* Maximum width for container */
+}
+
+/* Global Reset - Ensures consistency across browsers */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Base Styles for HTML and Body */
+html,
+body {
+  height: 100%;
+  background-color: var(--background-light);
+  color: var(--text-dark);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Typography Styles for Headings and Paragraphs */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--primary-blue);
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Utility Classes - Quick use classes for common spacing and layout */
+.m-0 {
+  margin: 0;
+}
+.p-0 {
+  padding: 0;
+}
+.mt-1 {
+  margin-top: 0.25rem;
+}
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+.ml-1 {
+  margin-left: 0.25rem;
+}
+.pt-1 {
+  padding-top: 0.25rem;
+}
+.pb-1 {
+  padding-bottom: 0.25rem;
+}
+
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+/* Buttons - Default and secondary button styles with hover effects */
+.btn {
+  background: var(--primary-button-color);
+  color: var(--text-light);
+  border: 1px solid var(--secondary-blue);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px #14142b46;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--primary-button-color-hover);
+  box-shadow: none;
+}
+
+.btn-secondary {
+  background: var(--background-light);
+  color: var(--text-dark);
+  border: 1px solid var(--background-grey);
+}
+
+.btn-secondary:hover {
+  background: var(--background-light);
+  color: var(--text-dark);
+  border: 1px solid var(--background-grey);
+}
+
+/* Forms - Consistent input and button styles */
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--primary-blue);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--secondary-blue);
+}
+
+button:focus {
+  outline: none;
+}
+
+.flex {
+  display: flex;
+}
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container - For page layout, with responsive width */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+/* Grid System - A basic grid layout system */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Flexible columns */
+  gap: 1rem;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: var(--text-grey);
+}
+
+.card {
+  padding: 2rem 2rem;
+  width: 100%;
+  max-width: 100%;
+  margin: 1rem auto;
+  background-image: url('../../public/grid-background.svg'); /* Path to your SVG */
+  background-position: center;
+  /* background-repeat: repeat; */
+  /* background-size: cover; */
+  background-blend-mode: screen; /* Blends the  color with the SVG */
+  border-radius: 24px;
+}
+
+.card img {
+  border-radius: 8px;
+}
+
+.card.grey {
+  background-color: var(--background-grey);
+}
+
+.card.blue {
+  background-color: rgba(218, 239, 251, 0.7);
+  background-color: var(--hover-blue);
+  color: var(--text-light);
+}
+
+.card.blue > h3 {
+  color: var(--text-light);
+}
+
+/* Section Spacing - Consistent spacing between sections */
+.section {
+  padding: 2rem 4rem;
+  color: var(--text-grey);
+}
+
+.section-lg {
+  padding: 4rem 0;
+}
+
+.section h3 {
+  color: var(--primary-blue);
+}
+
+/* Responsive Design - Adjusting layout for different screen sizes */
+
+/* Mobile Phones (up to 600px) */
+@media (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+  }
+
+  .section.section-grid {
+    padding: 1rem;
+  }
+
+  /* Responsive grid for mobile */
+  .grid {
+    grid-template-columns: 1fr; /* Flexible columns */
+  }
+
+  .card {
+    padding: 1rem; /* Reduce padding for smaller screens */
+    min-width: 90vw; /* Make the card responsive for smaller screens */
+  }
+}
+
+/* Tablets (601px to 768px) */
+@media (min-width: 601px) and (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.9rem;
+  }
+
+  .btn {
+    padding: 0.65rem 1.25rem;
+  }
+
+  /* Adjust grid layout for tablet */
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* Show 2 items per row */
+  }
+
+  .card:nth-child(3) {
+    grid-column: 1 / span 2; /* Third card spans across both columns on the second row */
+    justify-self: center; /* Centers the third card */
+  }
+}
+
+/* Small Desktops (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2.1rem;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+  }
+
+  /* Adjust grid layout for small desktops */
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* Show 2 items per row */
+  }
+  .card:nth-child(3) {
+    grid-column: 1 / span 2; /* Third card spans across both columns on the second row */
+    justify-self: center; /* Centers the third card */
+  }
+}
+
+/* Large Desktops (1025px and up) */
+@media (min-width: 1025px) {
+  html {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  .btn {
+    padding: 0.85rem 1.75rem;
+  }
+
+  /* Adjust grid layout for larger screens */
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* Show 3 items per row */
+  }
+}
